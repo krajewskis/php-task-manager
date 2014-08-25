@@ -1,0 +1,12 @@
+{
+	"name": "krajewskis/task-manager",
+	"description": "Example of my skills ;)",
+	"minimum-stability": "stable",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "Sebatian Krajewski",
+			"email": "krajewskise@gmail.com"
+		}
+	]
+}
