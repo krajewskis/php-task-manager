@@ -22,4 +22,26 @@ abstract class AbstractModel
 	{
 		return get_object_vars($this);
 	}
+
+	/**
+	 * @param \stdClass $object
+	 */
+	public function rewrite(\stdClass $object)
+	{
+		foreach (get_object_vars($object) as $property => $value) {
+			if (!(is_string($value) && strlen($value) == 0)) {
+				$this->$property = $value;
+			}
+		}
+	}
+
+	/**
+	 * @param \stdClass $object
+	 */
+	public function rewriteBack(\stdClass $object)
+	{
+		foreach (get_object_vars($this) as $property => $value) {
+			$object->$property = $value;
+		}
+	}
 } 
