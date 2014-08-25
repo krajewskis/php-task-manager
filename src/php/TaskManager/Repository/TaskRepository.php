@@ -13,6 +13,10 @@ use TaskManager\Enum\RepositoryTypeEnum;
 use TaskManager\Model\AbstractModel;
 use TaskManager\Model\Task;
 
+/**
+ * Class TaskRepository
+ * @package TaskManager\Repository
+ */
 class TaskRepository extends AbstractRepository
 {
 	public function __construct()

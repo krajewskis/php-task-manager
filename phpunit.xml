@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="src/php/bootstrap.php" stderr="true">
+
+
+	<testsuites>
+		<testsuite name="Repository">
+			<directory suffix="Test.php">test/php/TaskManager/Repository</directory>
+		</testsuite>
+	</testsuites>
+
+	<filter>
+		<whitelist addUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">test/php</directory>
+		</whitelist>
+	</filter>
+
+</phpunit>

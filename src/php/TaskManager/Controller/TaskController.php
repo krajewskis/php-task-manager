@@ -9,6 +9,10 @@
 namespace TaskManager\Controller;
 
 
+/**
+ * Class TaskController
+ * @package TaskManager\Controller
+ */
 class TaskController {
 
 } 

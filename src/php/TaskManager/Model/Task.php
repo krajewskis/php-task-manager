@@ -9,8 +9,18 @@
 namespace TaskManager\Model;
 
 
+/**
+ * Class Task
+ * @package TaskManager\Model
+ */
 class Task extends AbstractModel
 {
+	/**
+	 * @var int
+	 */
 	public $id;
+	/**
+	 * @var string
+	 */
 	public $title;
 }

@@ -13,13 +13,36 @@ use TaskManager\Environment;
 use TaskManager\Model\AbstractModel;
 use TaskManager\Repository\RepositoryInterface\RepositoryInterface;
 
+/**
+ * Class DatabaseRepository
+ * @package TaskManager\Repository\DatabaseRepository
+ */
 class DatabaseRepository implements RepositoryInterface
 {
+	/**
+	 * @var string
+	 */
 	private $model;
+	/**
+	 * @var string
+	 */
 	private $table;
+	/**
+	 * @var string
+	 */
 	private $db;
+	/**
+	 * @var \PDO
+	 */
 	private $pdo;
+	/**
+	 * @var \FluentPDO
+	 */
+	private $fpdo;
 
+	/**
+	 * @param string $model
+	 */
 	public function __construct($model)
 	{
 		$this->model = $model;
@@ -32,6 +55,9 @@ class DatabaseRepository implements RepositoryInterface
 		$this->fpdo = new \FluentPDO($this->pdo);
 	}
 
+	/**
+	 * @return AbstractModel[]
+	 */
 	public function readList()
 	{
 		$query = $this->fpdo->from($this->table);
@@ -40,6 +66,10 @@ class DatabaseRepository implements RepositoryInterface
 		return $list;
 	}
 
+	/**
+	 * @param $id
+	 * @return AbstractModel
+	 */
 	public function read($id)
 	{
 		$query = $this->fpdo->from($this->table, $id);
@@ -48,6 +78,10 @@ class DatabaseRepository implements RepositoryInterface
 		return $entity ? $entity : new $this->model;
 	}
 
+	/**
+	 * @param AbstractModel $entity
+	 * @return bool
+	 */
 	public function save(AbstractModel &$entity)
 	{
 		$values = $entity->getValues();
@@ -76,11 +110,15 @@ class DatabaseRepository implements RepositoryInterface
 		return (bool)$res;
 	}
 
+	/**
+	 * @param $id
+	 * @return bool
+	 */
 	public function delete($id)
 	{
 		$query = $this->fpdo->delete($this->table, $id);
 		$res = $query->execute();
-		return $res;
+		return (bool)$res;
 	}
 
 }

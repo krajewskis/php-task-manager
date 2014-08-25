@@ -9,8 +9,12 @@
 namespace TaskManager\Enum;
 
 
+/**
+ * Class RepositoryTypeEnum
+ * @package TaskManager\Enum
+ */
 class RepositoryTypeEnum
 {
-	const SQL = 'SQL';
-	const FILE = 'FILE';
+	const DATABASE = 'Database';
+	const FILE = 'File';
 } 

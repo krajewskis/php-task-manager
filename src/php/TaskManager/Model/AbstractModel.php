@@ -9,8 +9,15 @@
 namespace TaskManager\Model;
 
 
+/**
+ * Class AbstractModel
+ * @package TaskManager\Model
+ */
 abstract class AbstractModel
 {
+	/**
+	 * @return array
+	 */
 	public function getValues()
 	{
 		return get_object_vars($this);
