@@ -28,10 +28,8 @@ abstract class AbstractModel
 	 */
 	public function rewrite(\stdClass $object)
 	{
-		foreach (get_object_vars($object) as $property => $value) {
-			if (!(is_string($value) && strlen($value) == 0)) {
-				$this->$property = $value;
-			}
+		foreach (get_object_vars($this) as $property => $value) {
+			$this->$property = $object->$property;
 		}
 	}
 
