@@ -4,11 +4,14 @@
 
 
 	<testsuites>
+		<testsuite name="Repository">
+			<directory suffix="Test.php">test/php/TaskManager/Repository</directory>
+		</testsuite>
 		<testsuite name="Controller">
 			<directory suffix="Test.php">test/php/TaskManager/Controller</directory>
 		</testsuite>
-		<testsuite name="Repository">
-			<directory suffix="Test.php">test/php/TaskManager/Repository</directory>
+		<testsuite name="TaskRestAPI">
+			<directory suffix="Test.php">test/php/TaskManager/TaskRestAPI</directory>
 		</testsuite>
 
 	</testsuites>

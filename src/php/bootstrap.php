@@ -29,5 +29,3 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 \TaskManager\Environment::setAppDir(__DIR__ . '/../../');
 \TaskManager\Environment::setConfig(__DIR__ . '/config.ini');
 
-$router = new \TaskManager\Router();
-$router->findRoute();

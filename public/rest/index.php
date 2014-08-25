@@ -7,3 +7,6 @@
  */
 
 require_once __DIR__ . '/../../src/php/bootstrap.php';
+
+$router = new \TaskManager\Router();
+$router->findRoute();

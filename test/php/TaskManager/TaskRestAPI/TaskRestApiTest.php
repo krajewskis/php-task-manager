@@ -23,7 +23,29 @@ class TaskRestApiTest extends \PHPUnit_Framework_TestCase
 
 	public function testListAll()
 	{
+		$this->curl->doGetId(1);
+	}
+
+	public function testReadList()
+	{
 		$this->curl->doGet();
-		print_r($this->curl->getOriginalResult());
+		$message = $this->curl->getResultMessage();
+		$this->assertEquals('OK', $message);
+
+		$list = $this->curl->getResultData();
+		$this->assertTrue(count($list) > 0);
+		$task = current($list);
+		$this->assertTrue($task->id >= 1);
+		$this->assertFalse(empty($task->title));
+	}
+
+	public function testCRUD()
+	{
+		$this->markTestSkipped('not finish');
+	}
+
+	public function testValidator()
+	{
+		$this->markTestSkipped('not finish');
 	}
 } 
