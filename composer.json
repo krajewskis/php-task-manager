@@ -8,5 +8,10 @@
 			"name": "Sebatian Krajewski",
 			"email": "krajewskise@gmail.com"
 		}
-	]
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"lichtner/fluentpdo": "dev-master",
+		"phpunit/phpunit": "3.7.28"
+	}
 }
